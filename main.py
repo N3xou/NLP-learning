@@ -21,3 +21,10 @@ vect.get_feature_names_out()
 simple_train_dtm = vect.transform(simple_train)
 simple_train_dtm
 simple_train_dtm.toarray()
+
+pd.DataFrame(simple_train_dtm.toarray(), columns=vect.get_feature_names())
+
+print(type(simple_train_dtm))
+
+
+print(simple_train_dtm)
