@@ -17,3 +17,7 @@ vect.fit(simple_train)
 
 # examine the fitted vocabulary
 vect.get_feature_names_out()
+
+simple_train_dtm = vect.transform(simple_train)
+simple_train_dtm
+simple_train_dtm.toarray()
