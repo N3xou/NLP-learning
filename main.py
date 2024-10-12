@@ -33,3 +33,14 @@ simple_test_dtm = vect.transform(simple_test)
 simple_test_dtm.toarray()
 # examine the vocabulary and document-term matrix together
 pd.DataFrame(simple_test_dtm.toarray(), columns=vect.get_feature_names_out())
+
+# read file into pandas using a relative path
+sms = pd.read_csv("/kaggle/input/sms-spam-collection-dataset/spam.csv", encoding='latin-1')
+sms.dropna(how="any", inplace=True, axis=1)
+sms.columns = ['label', 'message']
+
+sms.head()
+
+sms.describe()
+
+sms.groupby('label').describe()
