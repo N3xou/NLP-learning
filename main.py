@@ -25,3 +25,11 @@ pd.DataFrame(simple_train_dtm.toarray(), columns=vect.get_feature_names())
 print(type(simple_train_dtm))
 
 print(simple_train_dtm)
+
+# example text for model testing
+simple_test = ["please don't call me"]
+
+simple_test_dtm = vect.transform(simple_test)
+simple_test_dtm.toarray()
+# examine the vocabulary and document-term matrix together
+pd.DataFrame(simple_test_dtm.toarray(), columns=vect.get_feature_names_out())
