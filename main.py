@@ -60,3 +60,9 @@ sms[sms.label=='spam'].message_len.plot(kind='hist', color='red',
                                        label='Spam messages', alpha=0.6)
 plt.legend()
 plt.xlabel("Message Length")
+
+sms[sms.label=='ham'].describe()
+
+sms[sms.label=='spam'].describe()
+
+sms[sms.message_len == 910].message.iloc[0]
