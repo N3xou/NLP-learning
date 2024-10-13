@@ -44,3 +44,19 @@ sms.head()
 sms.describe()
 
 sms.groupby('label').describe()
+
+# convert label to a numerical variable
+sms['label_num'] = sms.label.map({'ham':0, 'spam':1})
+sms.head()
+
+sms['message_len'] = sms.message.apply(len)
+sms.head()
+
+plt.figure(figsize=(12, 8))
+
+sms[sms.label=='ham'].message_len.plot(bins=35, kind='hist', color='blue',
+                                       label='Ham messages', alpha=0.6)
+sms[sms.label=='spam'].message_len.plot(kind='hist', color='red',
+                                       label='Spam messages', alpha=0.6)
+plt.legend()
+plt.xlabel("Message Length")
